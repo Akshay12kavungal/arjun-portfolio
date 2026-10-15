@@ -18,7 +18,7 @@ export default function Header() {
       <div className="container nav">
         <a href="#top" className="logo" onClick={() => setOpen(false)}>
           <span className="logo-mark">AK</span>
-          <span className="logo-text">Arjun<span>.</span></span>
+          <span className="logo-text">Arjun<span>.</span>K</span>
         </a>
         <nav className={`nav-links ${open ? 'open' : ''}`}>
           {NAV.map((n) => (
