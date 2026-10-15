@@ -18,7 +18,7 @@ export default function Hero() {
             <span className="dot" /> Open to new opportunities
           </p>
           <h1>
-            {first} <span className="serif">{rest.join(' ')}.</span>
+            {first}<span className="accent">.</span><span className="serif">{rest.join(' ')}</span>
           </h1>
           <p className="role">{profile.title}</p>
           <p className="tagline">{profile.tagline}</p>

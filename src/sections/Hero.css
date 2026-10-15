@@ -23,6 +23,7 @@
   margin: 22px 0 14px; line-height: 1;
 }
 .hero h1 .serif { font-size: 1.08em; }
+.hero h1 .accent { color: var(--accent); }
 .role { font-weight: 600; font-size: clamp(1.05rem, 2vw, 1.25rem); color: rgba(255,255,255,.92); }
 .tagline { margin-top: 16px; max-width: 520px; color: rgba(255,255,255,.62); font-size: 1.02rem; }
 .hero-actions { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
