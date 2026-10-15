@@ -1,0 +1,13 @@
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.edu-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+.edu-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--accent-soft); color: var(--accent-ink); }
+.edu h3 { color: var(--ink); font-size: 1.2rem; letter-spacing: -.02em; }
+.edu p { color: var(--muted); margin-top: 6px; }
+
+@media (max-width: 960px) {
+  .edu-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .edu-grid { grid-template-columns: 1fr; }
+}

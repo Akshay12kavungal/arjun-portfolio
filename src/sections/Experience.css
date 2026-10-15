@@ -1,0 +1,32 @@
+.timeline { list-style: none; padding: 0 0 0 44px; margin: 0; position: relative; }
+.timeline::before {
+  content: ''; position: absolute; left: 11px; top: 10px; bottom: 10px; width: 2px;
+  background: linear-gradient(var(--accent), var(--line) 40%);
+}
+.timeline-item { position: relative; margin-bottom: 24px; }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -44px; top: 32px; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--bg-alt); border: 2px solid var(--muted);
+}
+.timeline-dot::after { content: ''; position: absolute; inset: 5px; border-radius: 50%; background: var(--muted); }
+.timeline-dot.current { border-color: var(--accent); box-shadow: 0 0 0 6px var(--accent-soft); }
+.timeline-dot.current::after { background: var(--accent); }
+.job.is-current::before {
+  content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 3px; border-radius: 0 3px 3px 0; background: var(--accent);
+}
+.job-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; }
+.job h3 { font-size: 1.3rem; color: var(--ink); letter-spacing: -.02em; }
+.job-role { font-weight: 700; color: var(--accent-ink); margin-top: 4px; }
+.job-dept { font-size: .88rem; color: var(--muted); }
+.job-desc { color: var(--muted); max-width: 760px; }
+
+.tags { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li { font-size: .8rem; font-weight: 600; padding: 6px 13px; border-radius: 999px; background: var(--chip); color: var(--ink); border: 1px solid var(--line); }
+
+@media (max-width: 560px) {
+  .timeline { padding-left: 34px; }
+  .timeline::before { left: 9px; }
+  .timeline-dot { left: -34px; width: 20px; height: 20px; }
+  .timeline-dot::after { inset: 4px; }
+}

@@ -1,16 +1,61 @@
-# React + Vite
+# Arjun K — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio site for Arjun K, Operations In-Charge (Food & Beverage). A static single-page site built with React and Vite, with light and dark themes.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev       # start the dev server
+npm run build     # production build into dist/
+npm run preview   # serve the production build locally
+npm run lint      # run oxlint
+```
 
-## React Compiler
+## Project structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+├── main.jsx              # entry point; loads global styles and mounts <App />
+├── App.jsx               # page layout: composes all sections
+├── assets/               # images (profile photo)
+├── data/
+│   ├── portfolio.js      # ALL site content: profile, experience, skills, education…
+│   └── nav.js            # navigation links / section ids
+├── components/           # reusable UI pieces (each with its own .css)
+│   ├── Header.jsx        # sticky nav, theme toggle, scroll progress bar
+│   ├── Footer.jsx
+│   ├── BackToTop.jsx
+│   ├── SectionTitle.jsx  # numbered eyebrow + heading
+│   ├── CountUp.jsx       # animated number for stats
+│   ├── Icon.jsx          # inline SVG icon renderer
+│   └── icons.jsx         # icon path definitions
+├── sections/             # one file per page section (each with its own .css)
+│   ├── Hero.jsx
+│   ├── Marquee.jsx
+│   ├── About.jsx
+│   ├── Experience.jsx
+│   ├── Skills.jsx
+│   ├── Education.jsx
+│   └── Contact.jsx
+├── hooks/
+│   ├── useReveal.js         # fade-in on scroll for .reveal elements
+│   ├── useActiveSection.js  # highlights the current nav link
+│   ├── useScroll.js         # scroll position + progress
+│   └── useTheme.js          # light/dark theme with persistence
+└── styles/
+    ├── global.css        # design tokens (colors, fonts), dark theme, base reset
+    └── shared.css        # container, buttons, cards, pills, reveal animation
+```
 
-## Expanding the Oxlint configuration
+## Editing content
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+All text lives in [`src/data/portfolio.js`](src/data/portfolio.js). Update it there; no component changes are needed to add a job, skill, language or education entry.
+
+- To add a skill icon, use one of the names defined in [`src/components/icons.jsx`](src/components/icons.jsx).
+- To replace the photo, swap [`src/assets/arjun.jpg`](src/assets/arjun.jpg).
+- Colors and fonts are CSS variables at the top of [`src/styles/global.css`](src/styles/global.css).
+
+## Deploying
+
+`npm run build` outputs plain static files to `dist/`, which can be hosted on GitHub Pages, Netlify, Vercel or Cloudflare Pages.

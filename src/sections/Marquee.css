@@ -1,0 +1,5 @@
+.marquee { background: var(--accent); color: var(--navy-deep); overflow: hidden; padding: 16px 0; }
+.marquee-track { display: flex; width: max-content; animation: scroll 40s linear infinite; }
+.marquee-track span { display: flex; align-items: center; gap: 28px; padding-right: 28px; font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+.marquee-track i { font-style: normal; opacity: .55; font-size: .8rem; }
+@keyframes scroll { to { transform: translateX(-50%); } }

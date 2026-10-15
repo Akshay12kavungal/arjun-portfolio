@@ -1,0 +1,44 @@
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.skill { overflow: hidden; }
+.skill::after {
+  content: ''; position: absolute; width: 160px; height: 160px; right: -60px; top: -60px; border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-soft), transparent 70%); opacity: 0; transition: opacity .35s;
+}
+.skill:hover::after { opacity: 1; }
+.skill-icon {
+  display: grid; place-items: center; width: 54px; height: 54px; border-radius: 15px;
+  background: var(--accent-soft); color: var(--accent-ink); margin-bottom: 20px;
+  transition: background .3s, color .3s, transform .4s var(--ease);
+}
+.skill:hover .skill-icon { background: var(--accent); color: var(--navy-deep); transform: rotate(-6deg) scale(1.05); }
+.skill h3 { font-size: 1.05rem; color: var(--ink); letter-spacing: -.01em; }
+.skill p { font-size: .86rem; color: var(--muted); margin-top: 6px; }
+.skills-lower { display: grid; grid-template-columns: 1fr 1.4fr; gap: 18px; margin-top: 18px; }
+.sub { font-size: .78rem; color: var(--muted); margin-bottom: 22px; text-transform: uppercase; letter-spacing: .16em; font-weight: 700; }
+.tools { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.tools li {
+  display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px;
+  background: var(--chip); font-weight: 700;
+}
+.tool-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 11px; color: #fff; }
+.tool-icon.doc { background: #2b5cb8; }
+.tool-icon.sheet { background: #1d7a46; }
+.langs { list-style: none; padding: 0; margin: 0; display: grid; gap: 20px; }
+.lang-row { display: flex; justify-content: space-between; font-weight: 700; margin-bottom: 8px; }
+.lang-row em { font-style: normal; color: var(--muted); font-weight: 500; font-size: .86rem; }
+.bar { height: 8px; border-radius: 99px; background: var(--chip); overflow: hidden; }
+.bar span {
+  display: block; height: 100%; width: 0; border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), #ffd29a);
+  transition: width 1.4s .2s var(--ease);
+}
+.visible .bar span { width: var(--w); }
+
+@media (max-width: 960px) {
+  .skills-lower { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
